@@ -1,23 +1,15 @@
-import Basics from "@/component/Basics";
 import {
   LocalUser,
   RemoteUser,
-  useIsConnected,
   useJoin,
   useLocalCameraTrack,
   useLocalMicrophoneTrack,
   usePublish,
   useRemoteUsers,
 } from "agora-rtc-react";
-import React, { useEffect, useState } from "react";
-import {
-  redirect,
-  useNavigate,
-  useParams,
-  useSearchParams,
-} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-// import "./styles.css";
 import NameModal from "@/component/NameModal";
 import { Camera, Mic, PhoneOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -26,9 +18,8 @@ const APP_ID = import.meta.env.VITE_AGORA_APP_ID!;
 export default function Meet() {
   const { id } = useParams();
   const [calling, setCalling] = useState(false);
-  const isConnected = useIsConnected();
   const [name, setName] = useState(localStorage.getItem("name") || "");
-  const [openModal, setOpenModal] = useState(false);
+  const [_openModal, setOpenModal] = useState(false);
 
   // Local user
   const [micOn, setMic] = useState(false);

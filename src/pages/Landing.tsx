@@ -1,6 +1,5 @@
 import CreateMeeting from "@/component/buttons/CreateMeeting";
 import JoinMeetingInput from "@/component/input/JoinMeetingInput";
-import React from "react";
 
 export default function Landing() {
   return (
